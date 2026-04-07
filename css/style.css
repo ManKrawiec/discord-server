@@ -105,6 +105,7 @@ a {
 
 .sidebar-shortcut,
 .topbar-link,
+.join-btn,
 .page-back {
   display: inline-flex;
   align-items: center;
@@ -122,11 +123,26 @@ a {
 .sidebar-shortcut:focus-visible,
 .topbar-link:hover,
 .topbar-link:focus-visible,
+.join-btn:hover,
+.join-btn:focus-visible,
 .page-back:hover,
 .page-back:focus-visible {
   transform: translateY(-1px);
   background: rgba(88, 101, 242, 0.16);
   border-color: rgba(88, 101, 242, 0.24);
+}
+
+.join-btn {
+  background: #5865f2;
+  border-color: #5865f2;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.join-btn:hover,
+.join-btn:focus-visible {
+  background: #4752c4;
+  border-color: #4752c4;
 }
 
 .channel-sidebar__scroll {
