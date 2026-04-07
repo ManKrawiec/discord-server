@@ -119,6 +119,13 @@ document.addEventListener("DOMContentLoaded", () => {
     updateChannel(button);
   });
 
+  sidebarScroll.addEventListener("wheel", (event) => {
+    event.preventDefault();
+
+    const multiplier = event.deltaMode === WheelEvent.DOM_DELTA_LINE ? 16 : 1;
+    sidebarScroll.scrollTop += event.deltaY * multiplier;
+  }, { passive: false });
+
   sidebarToggle.addEventListener("click", () => {
     const isOpen = sidebar.classList.toggle("is-open");
     sidebarToggle.setAttribute("aria-expanded", String(isOpen));
