@@ -48,6 +48,7 @@ const descriptions = {
 document.addEventListener("DOMContentLoaded", () => {
   const sidebar = document.getElementById("channelSidebar");
   const sidebarToggle = document.getElementById("sidebarToggle");
+  const joinButton = document.querySelector(".join-btn");
   const channelTitle = document.getElementById("channelTitle");
   const channelHeading = document.getElementById("channelHeading");
   const channelDescription = document.getElementById("channelDescription");
@@ -125,6 +126,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const multiplier = event.deltaMode === WheelEvent.DOM_DELTA_LINE ? 16 : 1;
     sidebarScroll.scrollTop += event.deltaY * multiplier;
   }, { passive: false });
+
+  if (joinButton) {
+    joinButton.addEventListener("pointermove", (event) => {
+      const bounds = joinButton.getBoundingClientRect();
+      const x = event.clientX - bounds.left;
+      const y = event.clientY - bounds.top;
+
+      joinButton.style.setProperty("--mouse-x", `${x}px`);
+      joinButton.style.setProperty("--mouse-y", `${y}px`);
+    });
+  }
 
   sidebarToggle.addEventListener("click", () => {
     const isOpen = sidebar.classList.toggle("is-open");
