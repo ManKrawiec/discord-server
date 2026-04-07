@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta
     name="description"
-    content="Panel informacyjny serwera Discord z rolami, kanałami, moderacją i zasadami."
+    content="Statyczny panel serwera Discord z kanałami, kategoriami i opisami w stylu Discord."
   >
   <title>Discord Server Panel</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,301 +18,235 @@
 </head>
 <body>
   <div class="app-shell">
-    <aside class="sidebar" id="sidebar">
-      <div class="sidebar__brand">
-        <div class="server-badge">DS</div>
+    <aside class="server-strip" aria-label="Serwery Discord">
+      <button class="server-strip__item server-strip__item--active" type="button" aria-label="Aktywny serwer">
+        DS
+      </button>
+      <div class="server-strip__line"></div>
+      <button class="server-strip__item" type="button" aria-label="Serwer społeczności">
+        SC
+      </button>
+      <button class="server-strip__item" type="button" aria-label="Serwer eventów">
+        EV
+      </button>
+    </aside>
+
+    <aside class="channel-sidebar" id="channelSidebar">
+      <header class="channel-sidebar__header">
         <div>
-          <p class="sidebar__eyebrow">Discord Hub</p>
-          <h1>Server Control</h1>
+          <p class="channel-sidebar__eyebrow">Discord Server</p>
+          <h1>Panel Serwera</h1>
         </div>
-      </div>
+        <p class="channel-sidebar__meta">Kanały i kategorie</p>
+      </header>
 
-      <nav class="sidebar__nav" aria-label="Sekcje serwera">
-        <button class="nav-item is-active" type="button" data-target="roles" aria-current="page">
-          <span class="nav-item__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" focusable="false"><path d="M12 2 3 7v6c0 5 3.84 8.74 9 9 5.16-.26 9-4 9-9V7l-9-5Zm0 4.2 4.8 2.66L12 11.52 7.2 8.86 12 6.2Zm-6 4.39 4.5 2.5v4.88C7.86 17.18 6 14.88 6 12.15v-1.56Zm6 7.38v-4.88l4.5-2.5v1.56c0 2.73-1.86 5.03-4.5 5.82Z"/></svg>
-          </span>
-          <span>Roles</span>
-        </button>
+      <div class="channel-sidebar__scroll" aria-label="Lista kanałów">
+        <section class="channel-group">
+          <h2 class="channel-group__title">Informacje</h2>
+          <button class="channel-item is-active" type="button" data-channel="📋 zasady" data-category="Informacje">
+            <span class="channel-item__name">📋 zasady</span>
+          </button>
+          <button class="channel-item" type="button" data-channel="👋 powitalnia" data-category="Informacje">
+            <span class="channel-item__name">👋 powitalnia</span>
+          </button>
+          <button class="channel-item" type="button" data-channel="📢 ogłoszenia" data-category="Informacje">
+            <span class="channel-item__name">📢 ogłoszenia</span>
+          </button>
+          <button class="channel-item" type="button" data-channel="🎤 streamek" data-category="Informacje">
+            <span class="channel-item__name">🎤 streamek</span>
+          </button>
+          <button class="channel-item" type="button" data-channel="📜 spis-ról" data-category="Informacje">
+            <span class="channel-item__name">📜 spis-ról</span>
+          </button>
+          <button class="channel-item" type="button" data-channel="💸 podwyżka" data-category="Informacje">
+            <span class="channel-item__name">💸 podwyżka</span>
+          </button>
+          <button class="channel-item" type="button" data-channel="🎫 tickets" data-category="Informacje">
+            <span class="channel-item__name">🎫 tickets</span>
+          </button>
+        </section>
 
-        <button class="nav-item" type="button" data-target="channels">
-          <span class="nav-item__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" focusable="false"><path d="M10 3a1 1 0 0 1 0 2H8.41l-.7 4H10a1 1 0 1 1 0 2H7.35l-.7 4H9a1 1 0 1 1 0 2H6.29l-.3 1.7a1 1 0 1 1-1.98-.35L4.25 17H3a1 1 0 1 1 0-2h1.59l.7-4H3a1 1 0 1 1 0-2h2.65l.7-4H5a1 1 0 1 1 0-2h1.71l.3-1.7a1 1 0 0 1 1.98.35L8.75 3H10Zm7 0a1 1 0 1 1 0 2h-1.59l-.7 4H17a1 1 0 1 1 0 2h-2.65l-.7 4H16a1 1 0 1 1 0 2h-2.71l-.3 1.7a1 1 0 1 1-1.98-.35l.25-1.35H10a1 1 0 1 1 0-2h1.59l.7-4H10a1 1 0 1 1 0-2h2.65l.7-4H11a1 1 0 1 1 0-2h2.71l.3-1.7a1 1 0 0 1 1.98.35L15.75 3H17Z"/></svg>
-          </span>
-          <span>Channels</span>
-        </button>
+        <section class="channel-group">
+          <h2 class="channel-group__title">Kanały tekstowe</h2>
+          <button class="channel-item" type="button" data-channel="😴🤔 ogólny" data-category="Kanały tekstowe">
+            <span class="channel-item__name">😴🤔 ogólny</span>
+          </button>
+          <button class="channel-item" type="button" data-channel="💡 pomysły" data-category="Kanały tekstowe">
+            <span class="channel-item__name">💡 pomysły</span>
+          </button>
+          <button class="channel-item" type="button" data-channel="🏠 rrl" data-category="Kanały tekstowe">
+            <span class="channel-item__name">🏠 rrl</span>
+          </button>
+          <button class="channel-item" type="button" data-channel="🌐 tylko-dla-moderacji" data-category="Kanały tekstowe">
+            <span class="channel-item__name">🌐 tylko-dla-moderacji</span>
+          </button>
+          <button class="channel-item" type="button" data-channel="👑 zasady-moderacji" data-category="Kanały tekstowe">
+            <span class="channel-item__name">👑 zasady-moderacji</span>
+          </button>
+          <button class="channel-item" type="button" data-channel="😄 szukanko-ludzi" data-category="Kanały tekstowe">
+            <span class="channel-item__name">😄 szukanko-ludzi</span>
+          </button>
+          <button class="channel-item" type="button" data-channel="🔧 naprawy" data-category="Kanały tekstowe">
+            <span class="channel-item__name">🔧 naprawy</span>
+          </button>
+        </section>
 
-        <button class="nav-item" type="button" data-target="moderation">
-          <span class="nav-item__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" focusable="false"><path d="M12 2a7 7 0 0 0-7 7c0 3.13 2.05 5.79 4.88 6.71L12 22l2.12-6.29A7 7 0 1 0 12 2Zm0 2a5 5 0 0 1 5 5c0 2.09-1.28 3.87-3.1 4.62l-.83.34-.28.84L12 17.33l-.79-2.53-.28-.84-.83-.34A5 5 0 0 1 12 4Zm-1 3h2v3h3v2h-5V7Z"/></svg>
-          </span>
-          <span>Moderation</span>
-        </button>
+        <section class="channel-group">
+          <h2 class="channel-group__title">4fun</h2>
+          <button class="channel-item" type="button" data-channel="🎬 clipy" data-category="4fun">
+            <span class="channel-item__name">🎬 clipy</span>
+          </button>
+          <button class="channel-item" type="button" data-channel="😂 memy" data-category="4fun">
+            <span class="channel-item__name">😂 memy</span>
+          </button>
+          <button class="channel-item" type="button" data-channel="🎵 music" data-category="4fun">
+            <span class="channel-item__name">🎵 music</span>
+          </button>
+          <button class="channel-item" type="button" data-channel="📚 chwalanie-co-majo" data-category="4fun">
+            <span class="channel-item__name">📚 chwalanie-co-majo</span>
+          </button>
+          <button class="channel-item" type="button" data-channel="🧠 edity" data-category="4fun">
+            <span class="channel-item__name">🧠 edity</span>
+          </button>
+          <button class="channel-item" type="button" data-channel="🎲 gry-i-sklep" data-category="4fun">
+            <span class="channel-item__name">🎲 gry-i-sklep</span>
+          </button>
+          <button class="channel-item" type="button" data-channel="🕹 komendo-tekstowy" data-category="4fun">
+            <span class="channel-item__name">🕹 komendo-tekstowy</span>
+          </button>
+          <button class="channel-item" type="button" data-channel="🎮 oceny-setup" data-category="4fun">
+            <span class="channel-item__name">🎮 oceny-setup</span>
+          </button>
+          <button class="channel-item" type="button" data-channel="🔢 odliczanie" data-category="4fun">
+            <span class="channel-item__name">🔢 odliczanie</span>
+          </button>
+          <button class="channel-item" type="button" data-channel="✏️ ostatnia-litera" data-category="4fun">
+            <span class="channel-item__name">✏️ ostatnia-litera</span>
+          </button>
+          <button class="channel-item" type="button" data-channel="🎉 igrzyska-żartu" data-category="4fun">
+            <span class="channel-item__name">🎉 igrzyska-żartu</span>
+          </button>
+        </section>
 
-        <button class="nav-item" type="button" data-target="members">
-          <span class="nav-item__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" focusable="false"><path d="M16 11a4 4 0 1 0-3.46-6H11a4 4 0 1 0 0 8h5Zm-9 0a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm0 2c-3.31 0-6 2.02-6 4.5V20h12v-2.5C13 15.02 10.31 13 7 13Zm9 0c-.66 0-1.29.08-1.89.23 1.16.95 1.89 2.27 1.89 3.77V20h7v-2.5c0-2.48-2.69-4.5-6-4.5Z"/></svg>
-          </span>
-          <span>Members</span>
-        </button>
+        <section class="channel-group">
+          <h2 class="channel-group__title">Kanały głosowe</h2>
+          <button class="channel-item channel-item--voice" type="button" data-channel="🔊 Ogólne" data-category="Kanały głosowe">
+            <span class="channel-item__name">🔊 Ogólne</span>
+          </button>
+          <button class="channel-item channel-item--voice" type="button" data-channel="🔊 duo" data-category="Kanały głosowe">
+            <span class="channel-item__name">🔊 duo</span>
+          </button>
+          <button class="channel-item channel-item--voice" type="button" data-channel="🔊 trio" data-category="Kanały głosowe">
+            <span class="channel-item__name">🔊 trio</span>
+          </button>
+          <button class="channel-item channel-item--voice" type="button" data-channel="🔊 quatro" data-category="Kanały głosowe">
+            <span class="channel-item__name">🔊 quatro</span>
+          </button>
+          <button class="channel-item channel-item--voice" type="button" data-channel="🔊 Unlimited" data-category="Kanały głosowe">
+            <span class="channel-item__name">🔊 Unlimited</span>
+          </button>
+          <button class="channel-item channel-item--voice" type="button" data-channel="🔊 Nieobecność" data-category="Kanały głosowe">
+            <span class="channel-item__name">🔊 Nieobecność</span>
+          </button>
+          <button class="channel-item channel-item--voice" type="button" data-channel="🔊 Streamek" data-category="Kanały głosowe">
+            <span class="channel-item__name">🔊 Streamek</span>
+          </button>
+        </section>
 
-        <button class="nav-item" type="button" data-target="events">
-          <span class="nav-item__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" focusable="false"><path d="M7 2a1 1 0 0 1 1 1v1h8V3a1 1 0 1 1 2 0v1h1a3 3 0 0 1 3 3v11a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h1V3a1 1 0 0 1 1-1Zm13 8H4v8a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-8ZM5 6a1 1 0 0 0-1 1v1h16V7a1 1 0 0 0-1-1H5Zm2 6h3v3H7v-3Z"/></svg>
-          </span>
-          <span>Events</span>
-        </button>
+        <section class="channel-group">
+          <h2 class="channel-group__title">Ban</h2>
+          <button class="channel-item" type="button" data-channel="❌ ban-room" data-category="Ban">
+            <span class="channel-item__name">❌ ban-room</span>
+          </button>
+          <button class="channel-item" type="button" data-channel="📩 requesty-na-bany" data-category="Ban">
+            <span class="channel-item__name">📩 requesty-na-bany</span>
+          </button>
+        </section>
 
-        <button class="nav-item" type="button" data-target="info">
-          <span class="nav-item__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" focusable="false"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm0 5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm2 10h-4v-2h1v-3h-1v-2h3v5h1v2Z"/></svg>
-          </span>
-          <span>Info / Rules</span>
-        </button>
-      </nav>
-
-      <div class="sidebar__footer">
-        <p>Status serwera</p>
-        <strong>Online • 128 osób</strong>
+        <section class="channel-group">
+          <h2 class="channel-group__title">Event</h2>
+          <button class="channel-item" type="button" data-channel="📜 zasady" data-category="Event">
+            <span class="channel-item__name">📜 zasady</span>
+          </button>
+          <button class="channel-item" type="button" data-channel="📅 zdarzenia-eventu" data-category="Event">
+            <span class="channel-item__name">📅 zdarzenia-eventu</span>
+          </button>
+          <button class="channel-item" type="button" data-channel="🤝 wspólne" data-category="Event">
+            <span class="channel-item__name">🤝 wspólne</span>
+          </button>
+          <button class="channel-item" type="button" data-channel="🛡 drużyna-1" data-category="Event">
+            <span class="channel-item__name">🛡 drużyna-1</span>
+          </button>
+          <button class="channel-item" type="button" data-channel="🛡 drużyna-2" data-category="Event">
+            <span class="channel-item__name">🛡 drużyna-2</span>
+          </button>
+          <button class="channel-item" type="button" data-channel="🏢 biuro-dowódcze-nr1" data-category="Event">
+            <span class="channel-item__name">🏢 biuro-dowódcze-nr1</span>
+          </button>
+          <button class="channel-item" type="button" data-channel="🏢 biuro-dowódcze-nr2" data-category="Event">
+            <span class="channel-item__name">🏢 biuro-dowódcze-nr2</span>
+          </button>
+          <button class="channel-item channel-item--voice" type="button" data-channel="🔊 Drużyna 1" data-category="Event">
+            <span class="channel-item__name">🔊 Drużyna 1</span>
+          </button>
+          <button class="channel-item channel-item--voice" type="button" data-channel="🔊 Drużyna 2" data-category="Event">
+            <span class="channel-item__name">🔊 Drużyna 2</span>
+          </button>
+          <button class="channel-item channel-item--voice" type="button" data-channel="🔊 Organizacyjny" data-category="Event">
+            <span class="channel-item__name">🔊 Organizacyjny</span>
+          </button>
+        </section>
       </div>
     </aside>
 
-    <div class="main-panel">
-      <header class="topbar">
+    <main class="content-panel">
+      <header class="content-topbar">
         <button
           class="hamburger"
           id="sidebarToggle"
           type="button"
-          aria-controls="sidebar"
+          aria-controls="channelSidebar"
           aria-expanded="false"
-          aria-label="Otwórz menu"
+          aria-label="Otwórz kanały"
         >
           <span></span>
           <span></span>
           <span></span>
         </button>
 
-        <div class="topbar__content">
-          <div>
-            <p class="topbar__eyebrow">Server Dashboard</p>
-            <h2 id="panelTitle">Roles</h2>
-          </div>
-
-          <div class="oauth-card">
-            <button class="discord-login" type="button" id="discordLogin">
-              Login with Discord
-            </button>
-            <p id="oauthStatus">Miejsce pod Discord OAuth2. Po integracji pokaż swoje role.</p>
-          </div>
+        <div>
+          <p class="content-topbar__eyebrow">Kanał serwera</p>
+          <h2 id="channelTitle">📋 zasady</h2>
         </div>
       </header>
 
-      <main class="content-area">
-        <section class="panel-card panel-card--active" id="roles" data-panel aria-labelledby="panelTitle">
-          <div class="panel-card__header">
-            <div>
-              <p class="panel-card__eyebrow">Role hierarchy</p>
-              <h3>Role serwera</h3>
-            </div>
-            <a class="panel-link" href="./roles/roles.html">Pełna lista ról</a>
-          </div>
+      <section class="content-card" id="channelContent">
+        <div class="content-card__meta">
+          <span class="content-pill" id="categoryLabel">Informacje</span>
+          <span class="content-pill content-pill--soft">Statyczny panel</span>
+        </div>
 
-          <div class="role-grid">
-            <article class="role-tile role-tile--violet">
-              <span class="role-chip">Administracja</span>
-              <p>Zarządza kierunkiem serwera, bezpieczeństwem i konfiguracją systemów.</p>
-            </article>
-            <article class="role-tile role-tile--orange">
-              <span class="role-chip">Pomocnicy Moderacji</span>
-              <p>Wspierają codzienną moderację, odpowiadają na zgłoszenia i pilnują porządku.</p>
-            </article>
-            <article class="role-tile role-tile--green">
-              <span class="role-chip">Członkowie</span>
-              <p>Aktywna społeczność biorąca udział w rozmowach, eventach i rozwoju serwera.</p>
-            </article>
-            <article class="role-tile role-tile--gray">
-              <span class="role-chip">Gość</span>
-              <p>Nowe osoby poznające serwer, kanały startowe i zasady przed pełnym dostępem.</p>
-            </article>
-            <article class="role-tile role-tile--gold">
-              <span class="role-chip">Bogowie serwera</span>
-              <p>Symboliczna, elitarna ranga dla wyróżnionych osób o szczególnym znaczeniu.</p>
-            </article>
-          </div>
-        </section>
+        <h3 class="content-card__heading" id="channelHeading">📋 zasady</h3>
+        <p class="content-card__description" id="channelDescription">
+          Podstawowy kanał z zasadami serwera. Tutaj można umieścić regulamin, najważniejsze informacje porządkowe i zasady wejścia do społeczności.
+        </p>
 
-        <section class="panel-card" id="channels" data-panel hidden>
-          <div class="panel-card__header">
-            <div>
-              <p class="panel-card__eyebrow">Communication map</p>
-              <h3>Kanały serwera</h3>
-            </div>
-            <a class="panel-link" href="./channels/channels.html">Rozwiń kanały</a>
-          </div>
-
-          <div class="channel-layout">
-            <article class="info-box">
-              <h4>Tekstowe</h4>
-              <ul class="channel-list">
-                <li><span>#</span> ogłoszenia</li>
-                <li><span>#</span> zasady-serwera</li>
-                <li><span>#</span> chat-ogólny</li>
-                <li><span>#</span> media-i-memy</li>
-                <li><span>#</span> zgłoszenia</li>
-              </ul>
-            </article>
-
-            <article class="info-box">
-              <h4>Głosowe</h4>
-              <ul class="channel-list channel-list--voice">
-                <li><span>•</span> Poczekalnia</li>
-                <li><span>•</span> Squad Alpha</li>
-                <li><span>•</span> Squad Bravo</li>
-                <li><span>•</span> Event Stage</li>
-              </ul>
-            </article>
-          </div>
-        </section>
-
-        <section class="panel-card" id="moderation" data-panel hidden>
-          <div class="panel-card__header">
-            <div>
-              <p class="panel-card__eyebrow">Staff overview</p>
-              <h3>Moderation team</h3>
-            </div>
-            <a class="panel-link" href="./moderation/moderation.html">Zobacz zespół</a>
-          </div>
-
-          <div class="staff-grid">
-            <article class="member-row">
-              <strong>NyxCore</strong>
-              <span class="tag tag--violet">Administrator</span>
-            </article>
-            <article class="member-row">
-              <strong>RavenOps</strong>
-              <span class="tag tag--violet">Administrator</span>
-            </article>
-            <article class="member-row">
-              <strong>PixelGuard</strong>
-              <span class="tag tag--orange">Moderator</span>
-            </article>
-            <article class="member-row">
-              <strong>EchoShield</strong>
-              <span class="tag tag--orange">Moderator</span>
-            </article>
-          </div>
-        </section>
-
-        <section class="panel-card" id="members" data-panel hidden>
-          <div class="panel-card__header">
-            <div>
-              <p class="panel-card__eyebrow">Online now</p>
-              <h3>Aktywni członkowie</h3>
-            </div>
-            <div class="panel-card__actions">
-              <span class="status-pill">27 online</span>
-              <a class="panel-link" href="./members/members.html">Pełna lista</a>
-            </div>
-          </div>
-
-          <div class="staff-grid">
-            <article class="member-row">
-              <strong>Astra</strong>
-              <span class="tag tag--green">Członek</span>
-            </article>
-            <article class="member-row">
-              <strong>Volt</strong>
-              <span class="tag tag--gold">Bogowie serwera</span>
-            </article>
-            <article class="member-row">
-              <strong>Nero</strong>
-              <span class="tag tag--gray">Gość</span>
-            </article>
-            <article class="member-row">
-              <strong>Selene</strong>
-              <span class="tag tag--orange">Pomocnik moderacji</span>
-            </article>
-            <article class="member-row">
-              <strong>Orbit</strong>
-              <span class="tag tag--violet">Administracja</span>
-            </article>
-            <article class="member-row">
-              <strong>Nova</strong>
-              <span class="tag tag--green">Członek</span>
-            </article>
-          </div>
-        </section>
-
-        <section class="panel-card" id="events" data-panel hidden>
-          <div class="panel-card__header">
-            <div>
-              <p class="panel-card__eyebrow">Upcoming schedule</p>
-              <h3>Nadchodzące eventy</h3>
-            </div>
-            <div class="panel-card__actions">
-              <span class="status-pill">3 w tym tygodniu</span>
-              <a class="panel-link" href="./events/events.html">Kalendarz</a>
-            </div>
-          </div>
-
-          <div class="events-list">
-            <article class="event-item">
-              <span class="event-item__date">09 Apr</span>
-              <div>
-                <h4>Wieczór integracyjny</h4>
-                <p>Luźny voice chat, onboarding nowych osób i prezentacja kanałów.</p>
-              </div>
-            </article>
-            <article class="event-item">
-              <span class="event-item__date">11 Apr</span>
-              <div>
-                <h4>Turniej społeczności</h4>
-                <p>Rywalizacja drużynowa z podsumowaniem wyników na kanale ogłoszeń.</p>
-              </div>
-            </article>
-            <article class="event-item">
-              <span class="event-item__date">14 Apr</span>
-              <div>
-                <h4>Q&amp;A administracji</h4>
-                <p>Sesja pytań o plany rozwoju, role i propozycje zmian na serwerze.</p>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <section class="panel-card" id="info" data-panel hidden>
-          <div class="panel-card__header">
-            <div>
-              <p class="panel-card__eyebrow">Rules and info</p>
-              <h3>Informacje i regulamin</h3>
-            </div>
-            <div class="panel-card__actions">
-              <span class="status-pill">12 zasad</span>
-              <a class="panel-link" href="./info/info.html">Pełny regulamin</a>
-            </div>
-          </div>
-
-          <div class="rules-layout">
-            <article class="info-box">
-              <h4>Informacje</h4>
-              <p>Serwer skupia społeczność nastawioną na porządek, aktywność i czytelną komunikację między członkami.</p>
-              <p>Nowe osoby zaczynają od kanałów startowych, a po zapoznaniu się z zasadami otrzymują pełniejszy dostęp.</p>
-            </article>
-
-            <article class="info-box">
-              <h4>Regulamin</h4>
-              <ol class="rules-list">
-                <li>Szanuj innych i unikaj toksycznych zachowań.</li>
-                <li>Nie spamuj i nie flooduj kanałów.</li>
-                <li>Publikuj treści we właściwych sekcjach.</li>
-                <li>Nie reklamuj bez zgody administracji.</li>
-                <li>Zgłaszaj problemy moderacji zamiast eskalować konflikty.</li>
-              </ol>
-            </article>
-          </div>
-        </section>
-      </main>
-    </div>
+        <div class="content-card__grid">
+          <article class="info-tile">
+            <p class="info-tile__label">Kategoria</p>
+            <strong id="summaryCategory">Informacje</strong>
+          </article>
+          <article class="info-tile">
+            <p class="info-tile__label">Kanał</p>
+            <strong id="summaryChannel">📋 zasady</strong>
+          </article>
+          <article class="info-tile">
+            <p class="info-tile__label">Status</p>
+            <strong>Aktywny widok</strong>
+          </article>
+        </div>
+      </section>
+    </main>
   </div>
 
   <script src="./js/main.js"></script>
