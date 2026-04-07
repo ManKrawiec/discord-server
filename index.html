@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Oficjalna strona serwera Discord Bractwo Syntezy Świadomości."
+  >
+  <title>Bractwo Syntezy Świadomości</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <!-- Górne tło dekoracyjne -->
+  <div class="background-glow background-glow-left" aria-hidden="true"></div>
+  <div class="background-glow background-glow-right" aria-hidden="true"></div>
+
+  <!-- Nagłówek strony z nawigacją -->
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Główna nawigacja">
+      <a class="brand" href="#start">
+        <img
+          src="./assets/server-emblem.svg"
+          alt="Symbol serwera"
+          class="brand-logo"
+        >
+        <span>Bractwo Syntezy Świadomości</span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="nav-menu"
+      >
+        Menu
+      </button>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#o-serwerze">O serwerze</a></li>
+        <li><a href="#role">Role</a></li>
+        <li><a href="#regulamin">Regulamin</a></li>
+        <li><a href="#boty">Boty</a></li>
+        <li><a href="#systemy">Systemy i rozwój</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="start">
+    <!-- Sekcja startowa -->
+    <section class="hero container">
+      <div class="hero-content">
+        <p class="eyebrow">Społeczność Discord</p>
+        <h1>Bractwo Syntezy Świadomości</h1>
+        <p class="hero-text">
+          Miejsce dla osób, które chcą rozmawiać, rozwijać serwer i budować
+          aktywną społeczność wokół wspólnych tematów, eventów i systemów.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="https://discord.gg/twoj-link" target="_blank" rel="noopener noreferrer">
+            Dołącz do serwera
+          </a>
+          <a class="button button-secondary" href="#o-serwerze">
+            Poznaj serwer
+          </a>
+        </div>
+      </div>
+
+      <aside class="hero-panel">
+        <h2>Status projektu</h2>
+        <ul class="highlight-list">
+          <li>Nowoczesny serwer z jasnym podziałem ról</li>
+          <li>System poziomów za aktywność użytkowników</li>
+          <li>Eventy społecznościowe, w tym War Thunder</li>
+          <li>Plany rozwoju i przyszłe kadencje</li>
+        </ul>
+      </aside>
+    </section>
+
+    <!-- Sekcja informacyjna -->
+    <section class="content-section section-about container" id="o-serwerze">
+      <div class="section-heading">
+        <p class="section-label">O serwerze</p>
+        <h2>Społeczność z klimatem, porządkiem i rozwojem</h2>
+      </div>
+
+      <div class="card-grid">
+        <article class="card">
+          <h3>Cel serwera</h3>
+          <p>
+            Serwer został zaprojektowany jako uporządkowane miejsce do rozmów,
+            współpracy i integracji społeczności. Każda sekcja ma jasną rolę,
+            a użytkownicy mogą łatwo odnaleźć swoje miejsce.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Klimat</h3>
+          <p>
+            Styl serwera łączy nowoczesny wygląd z gamingowym klimatem.
+            Stawiamy na czytelność, estetykę oraz prosty podział treści.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Aktywność</h3>
+          <p>
+            Rozwój społeczności opiera się na aktywności użytkowników,
+            wydarzeniach i systemach motywujących do regularnego udziału.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Sekcja ról -->
+    <section class="content-section section-roles container" id="role">
+      <div class="section-heading">
+        <p class="section-label">Role</p>
+        <h2>Przejrzysta hierarchia serwera</h2>
+      </div>
+
+      <div class="role-list">
+        <article class="role-card">
+          <h3>Bogowie Serwera</h3>
+          <p>
+            Najwyższa rola, nadawana bardzo rzadko. Upamiętnia meincommander i
+            ma wyjątkowy, symboliczny charakter.
+          </p>
+        </article>
+
+        <article class="role-card">
+          <h3>Administracja</h3>
+          <p>
+            Odpowiada za kierunek rozwoju serwera, najważniejsze decyzje i
+            utrzymanie porządku na najwyższym poziomie.
+          </p>
+        </article>
+
+        <article class="role-card">
+          <h3>Pomocnicy Moderacji</h3>
+          <p>
+            Wspierają moderację w codziennej pracy, reagują na zgłoszenia i
+            pomagają utrzymać dobrą atmosferę.
+          </p>
+        </article>
+
+        <article class="role-card">
+          <h3>Członkowie</h3>
+          <p>
+            Trzon społeczności. To aktywni użytkownicy, którzy budują klimat
+            serwera i biorą udział w rozmowach oraz eventach.
+          </p>
+        </article>
+
+        <article class="role-card">
+          <h3>Goście</h3>
+          <p>
+            Osoby nowe lub odwiedzające serwer. Mogą zapoznać się z zasadami i
+            stopniowo dołączyć do głównej części społeczności.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Sekcja regulaminu -->
+    <section class="content-section section-rules container" id="regulamin">
+      <div class="section-heading">
+        <p class="section-label">Regulamin</p>
+        <h2>Skrócona, czytelna wersja zasad</h2>
+      </div>
+
+      <div class="rules-grid">
+        <article class="rule-card"><h3>§1</h3><p>Szanuj wszystkich użytkowników i unikaj obraźliwych treści.</p></article>
+        <article class="rule-card"><h3>§2</h3><p>Zakazane są wyzwiska, nękanie, groźby oraz prowokacje.</p></article>
+        <article class="rule-card"><h3>§3</h3><p>Nie spamuj wiadomościami, emotkami, pingami ani linkami.</p></article>
+        <article class="rule-card"><h3>§4</h3><p>Publikuj treści tylko w odpowiednich kanałach i zgodnie z ich przeznaczeniem.</p></article>
+        <article class="rule-card"><h3>§5</h3><p>Nie udostępniaj treści nielegalnych, niebezpiecznych lub nieodpowiednich.</p></article>
+        <article class="rule-card"><h3>§6</h3><p>Dbaj o kulturę wypowiedzi i czytelność rozmów.</p></article>
+        <article class="rule-card"><h3>§7</h3><p>Nie podszywaj się pod administrację, boty ani innych użytkowników.</p></article>
+        <article class="rule-card"><h3>§8</h3><p>Zgłaszaj problemy administracji zamiast wywoływać publiczne konflikty.</p></article>
+        <article class="rule-card"><h3>§9</h3><p>Nie reklamuj innych serwerów, stron ani usług bez zgody administracji.</p></article>
+        <article class="rule-card"><h3>§10</h3><p>Szanuj prywatność innych i nie publikuj cudzych danych.</p></article>
+        <article class="rule-card"><h3>§11</h3><p>Decyzje administracji należy traktować poważnie i omawiać spokojnie.</p></article>
+        <article class="rule-card"><h3>§12</h3><p>Dołączając do serwera, akceptujesz regulamin i zobowiązujesz się go przestrzegać.</p></article>
+      </div>
+    </section>
+
+    <!-- Sekcja botów -->
+    <section class="content-section section-bots container" id="boty">
+      <div class="section-heading">
+        <p class="section-label">Boty</p>
+        <h2>Narzędzia wspierające działanie serwera</h2>
+      </div>
+
+      <div class="bot-grid">
+        <article class="card"><h3>Carl-bot</h3><p>Automatyzacja, reakcje na role i zarządzanie podstawowymi funkcjami.</p></article>
+        <article class="card"><h3>MEE6</h3><p>Poziomy aktywności, wiadomości powitalne i funkcje społecznościowe.</p></article>
+        <article class="card"><h3>ProBot</h3><p>Moderacja, logi i dodatkowe narzędzia organizacyjne.</p></article>
+        <article class="card"><h3>TicketTool</h3><p>System ticketów do zgłoszeń, pytań i pomocy technicznej.</p></article>
+        <article class="card"><h3>Hydra</h3><p>Muzyka i wspólne słuchanie podczas spotkań na kanałach głosowych.</p></article>
+        <article class="card"><h3>JockieMusic</h3><p>Dodatkowe możliwości muzyczne dla aktywnych kanałów głosowych.</p></article>
+        <article class="card"><h3>DankMemer</h3><p>Zabawa, ekonomia i luźniejsze funkcje dla społeczności.</p></article>
+        <article class="card"><h3>Streamcord</h3><p>Integracja ze streamami i powiadomieniami dla społeczności.</p></article>
+        <article class="card"><h3>FlaviBot</h3><p>Wsparcie organizacyjne i dodatkowe funkcje serwerowe.</p></article>
+        <article class="card"><h3>Maki</h3><p>Rozrywka, komendy społecznościowe i aktywizacja użytkowników.</p></article>
+        <article class="card"><h3>StartIT</h3><p>Narzędzia pomocne w organizacji i rozwoju serwera.</p></article>
+      </div>
+    </section>
+
+    <!-- Sekcja systemów -->
+    <section class="content-section section-systems container" id="systemy">
+      <div class="section-heading">
+        <p class="section-label">Systemy i rozwój</p>
+        <h2>Funkcje, które budują aktywność społeczności</h2>
+      </div>
+
+      <div class="timeline">
+        <article class="timeline-item">
+          <h3>System poziomów</h3>
+          <p>
+            Użytkownicy zdobywają poziomy za aktywność, obecność i udział w
+            życiu serwera. To prosty sposób na wyróżnienie zaangażowanych osób.
+          </p>
+        </article>
+
+        <article class="timeline-item">
+          <h3>Eventy</h3>
+          <p>
+            Serwer rozwija wydarzenia społecznościowe, w tym wspólne eventy
+            związane z grami, na przykład War Thunder.
+          </p>
+        </article>
+
+        <article class="timeline-item">
+          <h3>Planowane kadencje</h3>
+          <p>
+            W planach znajdują się kadencje i uporządkowane etapy rozwoju,
+            które pomogą budować długofalowy porządek na serwerze.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Prosta stopka -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>Bractwo Syntezy Świadomości</p>
+      <p>Statyczna strona gotowa do publikacji na GitHub Pages.</p>
+    </div>
+  </footer>
+
+  <script src="./js/script.js"></script>
+</body>
+</html>
