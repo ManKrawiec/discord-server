@@ -3,41 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Info / Rules</title>
+  <meta
+    name="description"
+    content="Informacje o serwerze Discord, jego układzie i zasadach działania."
+  >
+  <title>Informacje Serwera</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <main class="main-panel">
-    <section class="panel-card panel-card--active">
-      <div class="panel-card__header">
+  <main class="page-shell">
+    <div class="page-wrapper">
+      <header class="page-topbar">
         <div>
-          <p class="panel-card__eyebrow">Standalone page</p>
-          <h3>Info / Rules</h3>
+          <p class="page-eyebrow">Discord Server</p>
+          <h1>Informacje serwera</h1>
         </div>
-        <div class="panel-card__actions">
-          <span class="status-pill">12 zasad</span>
-          <a class="panel-link" href="../index.html">Powrót do panelu</a>
+        <a class="page-back" href="../index.html">Powrót do panelu</a>
+      </header>
+
+      <section class="page-card">
+        <h2>Opis serwera</h2>
+        <p class="page-intro">
+          To jest osobna strona z informacjami o serwerze. Z panelu głównego można
+          tu wejść bez zastępowania treści kanałów, więc układ indeksu zostaje taki
+          jak teraz, a ważne informacje mają własne miejsce.
+        </p>
+
+        <div class="page-grid">
+          <article class="server-info-card">
+            <h3>Nazwa serwera</h3>
+            <p>Panel Serwera Discord. Strona ma styl inspirowany Discordem i służy jako statyczny podgląd struktury serwera.</p>
+          </article>
+          <article class="server-info-card">
+            <h3>Przeznaczenie</h3>
+            <p>Serwer jest podzielony na kanały informacyjne, tekstowe, rozrywkowe, głosowe oraz eventowe, żeby łatwo odnaleźć konkretne sekcje.</p>
+          </article>
+          <article class="server-info-card">
+            <h3>Moderacja</h3>
+            <p>Na serwerze istnieje osobna przestrzeń dla moderacji, zasady pracy zespołu oraz kanały zgłoszeniowe i ticketowe.</p>
+          </article>
+          <article class="server-info-card">
+            <h3>Event</h3>
+            <p>W zakładce eventowej uwzględniono jeden event z War Thundera oraz osobne kanały dla drużyn i organizacji wydarzenia.</p>
+          </article>
+          <article class="server-info-card">
+            <h3>Role</h3>
+            <p>Hierarchia obejmuje Administrację, Pomocników Moderacji, Członków, Gości i wyróżnioną rolę Bogowie serwera.</p>
+          </article>
+          <article class="server-info-card">
+            <h3>GitHub Pages</h3>
+            <p>Całość działa jako statyczna strona bez backendu, więc nadaje się bezpośrednio do hostowania przez GitHub Pages.</p>
+          </article>
         </div>
-      </div>
-      <div class="rules-layout">
-        <article class="info-box">
-          <h4>Informacje</h4>
-          <p>Serwer jest zorganizowany jak nowoczesny hub społeczności: role, kanały i moderacja są podzielone w czytelny sposób.</p>
-          <p>Po wdrożeniu Discord OAuth2 możesz w tym miejscu pokazywać indywidualne uprawnienia oraz personalizowany dostęp do sekcji.</p>
-        </article>
-        <article class="info-box">
-          <h4>Regulamin</h4>
-          <ol class="rules-list">
-            <li>Szanuj wszystkich użytkowników i nie prowokuj konfliktów.</li>
-            <li>Nie spamuj wiadomościami, pingami ani linkami.</li>
-            <li>Korzystaj z właściwych kanałów zgodnie z ich przeznaczeniem.</li>
-            <li>Nie reklamuj innych projektów bez zgody administracji.</li>
-            <li>Nie publikuj treści niebezpiecznych, nielegalnych ani obraźliwych.</li>
-            <li>Problemy zgłaszaj moderacji zamiast tworzyć publiczne dramy.</li>
-          </ol>
-        </article>
-      </div>
-    </section>
+      </section>
+    </div>
   </main>
 </body>
 </html>

@@ -46,6 +46,11 @@ button {
   cursor: pointer;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .app-shell {
   min-height: 100vh;
   display: grid;
@@ -87,6 +92,38 @@ button {
   margin: 8px 0 0;
   color: var(--text-soft);
   font-size: 0.92rem;
+}
+
+.sidebar-shortcuts {
+  display: grid;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.sidebar-shortcut,
+.topbar-link,
+.page-back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-main);
+  transition: transform 0.18s ease, background-color 0.18s ease, border-color 0.18s ease;
+}
+
+.sidebar-shortcut:hover,
+.sidebar-shortcut:focus-visible,
+.topbar-link:hover,
+.topbar-link:focus-visible,
+.page-back:hover,
+.page-back:focus-visible {
+  transform: translateY(-1px);
+  background: rgba(88, 101, 242, 0.16);
+  border-color: rgba(88, 101, 242, 0.24);
 }
 
 .channel-sidebar__scroll {
@@ -164,12 +201,20 @@ button {
 .content-topbar {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 16px;
   min-height: 72px;
   padding: 16px 22px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   background: rgba(49, 51, 56, 0.92);
   backdrop-filter: blur(12px);
+}
+
+.topbar-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .content-card {
@@ -252,6 +297,127 @@ button {
   line-height: 1.5;
 }
 
+.page-shell {
+  min-height: 100vh;
+  padding: 28px;
+  background:
+    radial-gradient(circle at top left, rgba(88, 101, 242, 0.14), transparent 24%),
+    radial-gradient(circle at bottom right, rgba(35, 165, 89, 0.1), transparent 20%),
+    var(--bg-app);
+}
+
+.page-wrapper {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.page-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+  padding: 20px 22px;
+  border-radius: var(--radius-xl);
+  background: rgba(35, 36, 40, 0.9);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.page-eyebrow {
+  margin: 0 0 6px;
+  color: var(--text-dim);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.page-topbar h1,
+.page-card h2,
+.role-card h3,
+.server-info-card h3 {
+  margin: 0;
+}
+
+.page-card {
+  padding: 28px;
+  border-radius: var(--radius-xl);
+  background:
+    linear-gradient(135deg, rgba(88, 101, 242, 0.1), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 32%),
+    var(--bg-card);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.page-intro {
+  max-width: 780px;
+  margin: 14px 0 0;
+  color: var(--text-soft);
+  line-height: 1.75;
+}
+
+.page-grid,
+.roles-grid {
+  display: grid;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.page-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.roles-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.server-info-card,
+.role-card {
+  padding: 20px;
+  border-radius: var(--radius-lg);
+  background: var(--bg-card-soft);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.server-info-card p,
+.role-card p {
+  margin: 12px 0 0;
+  color: var(--text-soft);
+  line-height: 1.7;
+}
+
+.role-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 0 12px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: white;
+}
+
+.role-badge--violet {
+  background: #7a5cff;
+}
+
+.role-badge--orange {
+  background: #ff9c42;
+}
+
+.role-badge--green {
+  background: #23a559;
+}
+
+.role-badge--gray {
+  background: #6d7278;
+}
+
+.role-badge--gold {
+  background: #c79a2f;
+}
+
 .hamburger {
   display: none;
   width: 46px;
@@ -277,6 +443,11 @@ button {
   }
 
   .content-card__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-grid,
+  .roles-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -306,6 +477,12 @@ button {
     margin: 18px;
     padding: 22px;
   }
+
+  .content-topbar,
+  .page-topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 640px) {
@@ -323,6 +500,15 @@ button {
 
   .content-card {
     margin: 14px;
+    padding: 18px;
+  }
+
+  .page-shell {
+    padding: 14px;
+  }
+
+  .page-topbar,
+  .page-card {
     padding: 18px;
   }
 }
