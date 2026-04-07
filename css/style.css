@@ -326,7 +326,7 @@ a {
 
 .page-eyebrow {
   margin: 0 0 6px;
-  color: var(--text-dim);
+  color: #9fb0ff;
   font-size: 0.78rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -337,6 +337,18 @@ a {
 .role-card h3,
 .server-info-card h3 {
   margin: 0;
+}
+
+.page-topbar h1 {
+  color: var(--text-main);
+  background: linear-gradient(135deg, #ffffff 0%, #b9c5ff 48%, #83ffc1 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.page-card h2 {
+  color: #dfe5ff;
 }
 
 .page-card {
@@ -376,7 +388,9 @@ a {
 .role-card {
   padding: 20px;
   border-radius: var(--radius-lg);
-  background: var(--bg-card-soft);
+  background:
+    linear-gradient(135deg, rgba(88, 101, 242, 0.08), transparent 42%),
+    var(--bg-card-soft);
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -385,6 +399,14 @@ a {
   margin: 12px 0 0;
   color: var(--text-soft);
   line-height: 1.7;
+}
+
+.server-info-card h3 {
+  color: #cfd7ff;
+}
+
+.role-card h3 {
+  color: #e8ebff;
 }
 
 .role-badge {
