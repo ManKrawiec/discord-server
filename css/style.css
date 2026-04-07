@@ -49,47 +49,7 @@ button {
 .app-shell {
   min-height: 100vh;
   display: grid;
-  grid-template-columns: 72px 320px 1fr;
-}
-
-.server-strip {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  padding: 14px 0;
-  background: var(--bg-strip);
-  border-right: 1px solid rgba(255, 255, 255, 0.04);
-}
-
-.server-strip__item {
-  width: 48px;
-  height: 48px;
-  border: 0;
-  border-radius: 18px;
-  background: #313338;
-  color: var(--text-main);
-  font-weight: 700;
-  transition: border-radius 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
-}
-
-.server-strip__item:hover,
-.server-strip__item:focus-visible {
-  border-radius: 14px;
-  background: var(--accent);
-  transform: translateY(-1px);
-}
-
-.server-strip__item--active {
-  border-radius: 14px;
-  background: var(--accent);
-}
-
-.server-strip__line {
-  width: 32px;
-  height: 2px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.12);
+  grid-template-columns: 320px 1fr;
 }
 
 .channel-sidebar {
@@ -313,7 +273,7 @@ button {
 
 @media (max-width: 1080px) {
   .app-shell {
-    grid-template-columns: 72px 280px 1fr;
+    grid-template-columns: 280px 1fr;
   }
 
   .content-card__grid {
@@ -322,14 +282,10 @@ button {
 }
 
 @media (max-width: 860px) {
-  .app-shell {
-    grid-template-columns: 72px 1fr;
-  }
-
   .channel-sidebar {
     position: fixed;
     top: 0;
-    left: 72px;
+    left: 0;
     bottom: 0;
     width: min(84vw, 320px);
     z-index: 20;
@@ -357,12 +313,7 @@ button {
     grid-template-columns: 1fr;
   }
 
-  .server-strip {
-    display: none;
-  }
-
   .channel-sidebar {
-    left: 0;
     width: min(88vw, 320px);
   }
 

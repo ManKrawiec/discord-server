@@ -1,14 +1,3 @@
-const channelItems = document.querySelectorAll(".channel-item");
-const sidebar = document.getElementById("channelSidebar");
-const sidebarToggle = document.getElementById("sidebarToggle");
-const channelTitle = document.getElementById("channelTitle");
-const channelHeading = document.getElementById("channelHeading");
-const channelDescription = document.getElementById("channelDescription");
-const categoryLabel = document.getElementById("categoryLabel");
-const summaryCategory = document.getElementById("summaryCategory");
-const summaryChannel = document.getElementById("summaryChannel");
-const channelContent = document.getElementById("channelContent");
-
 const descriptions = {
   "📋 zasady": "Podstawowy kanał z zasadami serwera. Tutaj można umieścić regulamin, najważniejsze informacje porządkowe i zasady wejścia do społeczności.",
   "👋 powitalnia": "Kanał startowy dla nowych osób. To dobre miejsce na krótkie przywitanie i pierwsze informacje o serwerze.",
@@ -56,53 +45,82 @@ const descriptions = {
   "🔊 Organizacyjny": "Kanał głosowy dla organizatorów i ustaleń technicznych podczas wydarzenia."
 };
 
-function getDescription(channelName, categoryName) {
-  return descriptions[`${channelName}|${categoryName}`]
-    || descriptions[channelName]
-    || `To jest placeholder dla kanału ${channelName}. W tym miejscu możesz później dodać dokładny opis, zasady lub przeznaczenie tej sekcji.`;
-}
+document.addEventListener("DOMContentLoaded", () => {
+  const sidebar = document.getElementById("channelSidebar");
+  const sidebarToggle = document.getElementById("sidebarToggle");
+  const channelTitle = document.getElementById("channelTitle");
+  const channelHeading = document.getElementById("channelHeading");
+  const channelDescription = document.getElementById("channelDescription");
+  const categoryLabel = document.getElementById("categoryLabel");
+  const summaryCategory = document.getElementById("summaryCategory");
+  const summaryChannel = document.getElementById("summaryChannel");
+  const channelContent = document.getElementById("channelContent");
+  const sidebarScroll = document.querySelector(".channel-sidebar__scroll");
 
-function updateChannel(button) {
-  const channelName = button.dataset.channel;
-  const categoryName = button.dataset.category;
-  const description = getDescription(channelName, categoryName);
-
-  channelItems.forEach((item) => {
-    const isActive = item === button;
-    item.classList.toggle("is-active", isActive);
-    if (isActive) {
-      item.setAttribute("aria-current", "page");
-    } else {
-      item.removeAttribute("aria-current");
-    }
-  });
-
-  channelTitle.textContent = channelName;
-  channelHeading.textContent = channelName;
-  channelDescription.textContent = description;
-  categoryLabel.textContent = categoryName;
-  summaryCategory.textContent = categoryName;
-  summaryChannel.textContent = channelName;
-
-  channelContent.classList.remove("is-transitioning");
-  void channelContent.offsetWidth;
-  channelContent.classList.add("is-transitioning");
-
-  if (window.innerWidth <= 860 && sidebar && sidebarToggle) {
-    sidebar.classList.remove("is-open");
-    sidebarToggle.setAttribute("aria-expanded", "false");
+  if (
+    !sidebar
+    || !sidebarToggle
+    || !channelTitle
+    || !channelHeading
+    || !channelDescription
+    || !categoryLabel
+    || !summaryCategory
+    || !summaryChannel
+    || !channelContent
+    || !sidebarScroll
+  ) {
+    return;
   }
-}
 
-channelItems.forEach((button) => {
-  button.addEventListener("click", () => {
+  function getDescription(channelName, categoryName) {
+    return descriptions[`${channelName}|${categoryName}`]
+      || descriptions[channelName]
+      || `To jest placeholder dla kanału ${channelName}. W tym miejscu możesz później dodać dokładny opis, zasady lub przeznaczenie tej sekcji.`;
+  }
+
+  function updateChannel(button) {
+    const channelName = button.dataset.channel;
+    const categoryName = button.dataset.category;
+    const description = getDescription(channelName, categoryName);
+    const channelItems = document.querySelectorAll(".channel-item");
+
+    channelItems.forEach((item) => {
+      const isActive = item === button;
+      item.classList.toggle("is-active", isActive);
+      if (isActive) {
+        item.setAttribute("aria-current", "page");
+      } else {
+        item.removeAttribute("aria-current");
+      }
+    });
+
+    channelTitle.textContent = channelName;
+    channelHeading.textContent = channelName;
+    channelDescription.textContent = description;
+    categoryLabel.textContent = categoryName;
+    summaryCategory.textContent = categoryName;
+    summaryChannel.textContent = channelName;
+
+    channelContent.classList.remove("is-transitioning");
+    void channelContent.offsetWidth;
+    channelContent.classList.add("is-transitioning");
+
+    if (window.innerWidth <= 860) {
+      sidebar.classList.remove("is-open");
+      sidebarToggle.setAttribute("aria-expanded", "false");
+    }
+  }
+
+  sidebarScroll.addEventListener("click", (event) => {
+    const button = event.target.closest(".channel-item");
+    if (!button) {
+      return;
+    }
     updateChannel(button);
   });
-});
 
-if (sidebar && sidebarToggle) {
   sidebarToggle.addEventListener("click", () => {
     const isOpen = sidebar.classList.toggle("is-open");
     sidebarToggle.setAttribute("aria-expanded", String(isOpen));
   });
-}
+});
