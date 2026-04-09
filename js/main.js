@@ -8,7 +8,7 @@ const descriptions = {
   "🎫 tickets": "Kanał organizacyjny do zgłoszeń, pytań technicznych i kontaktu z administracją.",
   "😴🤔 ogólny": "Główny kanał tekstowy do codziennych rozmów. Neutralne miejsce na aktywność całej społeczności.",
   "💡 pomysły": "Sekcja na propozycje zmian, nowych funkcji i ulepszeń serwera.",
-  "🏠 rrl": "Kanał luźniejszy, bardziej prywatny i swobodny, przeznaczony na rozmowy poza głównym nurtem.",
+  "🏠 irl": "Kanał luźniejszy, bardziej prywatny i swobodny, przeznaczony na rozmowy poza głównym nurtem.",
   "🌐 tylko-dla-moderacji": "Wewnętrzny kanał organizacyjny dla zespołu moderacyjnego i administracji.",
   "👑 zasady-moderacji": "Przestrzeń na wewnętrzne standardy pracy moderacji, procedury i ustalenia zespołu.",
   "😄 szukanko-ludzi": "Kanał do zbierania ekip do gier, wspólnych rozmów i szybkiego szukania aktywnych osób.",
