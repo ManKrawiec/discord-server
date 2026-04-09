@@ -190,11 +190,13 @@ a {
 }
 
 .channel-group + .channel-group {
-  margin-top: 16px;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .channel-group__title {
-  margin: 0 0 6px;
+  margin: 0 0 10px;
   padding: 0 10px;
   color: var(--text-dim);
   font-size: 0.82rem;
@@ -222,12 +224,16 @@ a {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin: 2px 0;
-  padding: 9px 10px;
+  margin: 0;
+  padding: 11px 12px;
   border-radius: var(--radius-sm);
   color: var(--text-soft);
   text-align: left;
   transition: background-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
+}
+
+.channel-group .sidebar-nav__link + .sidebar-nav__link {
+  margin-top: 8px;
 }
 
 .channel-item:hover,
