@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta
     name="description"
-    content="Role i uprawnienia serwera Discord."
+    content="Role serwera Discord i zakres odpowiedzialności poszczególnych grup."
   >
   <title>Role Serwera</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,48 +17,107 @@
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <main class="page-shell">
-    <div class="page-wrapper">
-      <header class="page-topbar">
+  <div class="app-shell">
+    <aside class="channel-sidebar" id="channelSidebar">
+      <header class="channel-sidebar__header">
         <div>
-          <p class="page-eyebrow">Discord Server</p>
-          <h1>Role i uprawnienia</h1>
+          <p class="channel-sidebar__eyebrow">Discord Server</p>
+          <h1>Role i Uprawnienia</h1>
         </div>
-        <a class="page-back" href="../index.html">Powrót do panelu</a>
+        <p class="channel-sidebar__meta">Nawigacja po sekcjach</p>
+        <div class="sidebar-shortcuts">
+          <a class="sidebar-shortcut" href="../index.html">Strona główna</a>
+          <a class="sidebar-shortcut" href="../channels/channels.html">Kanały</a>
+        </div>
       </header>
 
-      <section class="page-card">
-        <h2>Co robi każda rola</h2>
-        <p class="page-intro">
-          To jest osobna strona z opisem ról. Z poziomu panelu możesz tu wejść bez
-          przeładowywania opisu kanałów. Każda rola ma własne zadania i poziom
-          odpowiedzialności na serwerze.
+      <div class="channel-sidebar__scroll" aria-label="Sekcje panelu">
+        <section class="channel-group">
+          <h2 class="channel-group__title">Panel</h2>
+          <a class="sidebar-nav__link" href="../index.html">🏠 Strona główna</a>
+          <a class="sidebar-nav__link" href="../channels/channels.html"># Kanały</a>
+          <a class="sidebar-nav__link" href="../info/info.html">ℹ️ Informacje</a>
+        </section>
+
+        <section class="channel-group">
+          <h2 class="channel-group__title">Społeczność</h2>
+          <a class="sidebar-nav__link" href="../members/members.html">👥 Członkowie</a>
+          <a class="sidebar-nav__link is-active" href="./roles.html">🛡 Role serwera</a>
+          <a class="sidebar-nav__link" href="../events/events.html">🎯 Eventy</a>
+        </section>
+      </div>
+    </aside>
+
+    <main class="content-panel">
+      <header class="content-topbar">
+        <button
+          class="hamburger"
+          id="sidebarToggle"
+          type="button"
+          aria-controls="channelSidebar"
+          aria-expanded="false"
+          aria-label="Otwórz sekcje"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div>
+          <p class="content-topbar__eyebrow">Role serwera</p>
+          <h2>Role serwera</h2>
+        </div>
+        <div class="topbar-links">
+          <a class="topbar-link" href="../index.html">Powrót na główną</a>
+          <a
+            class="join-btn"
+            href="https://discord.gg/8MzyPqCg6n"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Dołącz do Discorda
+          </a>
+        </div>
+      </header>
+
+      <section class="content-card">
+        <div class="content-card__meta">
+          <span class="content-pill">Role</span>
+          <span class="content-pill content-pill--soft">Unormowana hierarchia</span>
+        </div>
+
+        <h3 class="content-card__heading">Co oznacza każda rola</h3>
+        <p class="content-card__description">
+          Role zostały ujednolicone, żeby nie powielać nazw i odpowiedzialności.
+          Każda grupa ma jedną, czytelną funkcję w hierarchii serwera.
         </p>
 
         <div class="roles-grid">
           <article class="role-card">
             <span class="role-badge role-badge--violet">Administracja</span>
-            <p>Zarządza serwerem, podejmuje kluczowe decyzje, pilnuje struktury kanałów i ustala kierunek rozwoju społeczności.</p>
+            <p>Zarządza serwerem, ustala kierunek rozwoju społeczności i decyduje o najważniejszych zmianach w układzie kanałów oraz zasadach.</p>
           </article>
           <article class="role-card">
-            <span class="role-badge role-badge--orange">Pomocnicy Moderacji</span>
-            <p>Pomagają utrzymywać porządek, reagują na zgłoszenia, wspierają użytkowników i pilnują przestrzegania zasad.</p>
+            <span class="role-badge role-badge--orange">Moderator</span>
+            <p>Reaguje na zgłoszenia, pilnuje porządku w rozmowach i wspiera administrację przy utrzymaniu codziennego ładu na serwerze.</p>
           </article>
           <article class="role-card">
-            <span class="role-badge role-badge--green">Członkowie</span>
-            <p>To podstawowa, aktywna grupa społeczności. Uczestniczy w rozmowach, eventach i tworzy codzienny klimat serwera.</p>
+            <span class="role-badge role-badge--green">Członek</span>
+            <p>Podstawowa aktywna rola społeczności. Daje pełen udział w rozmowach, eventach i codziennym życiu serwera.</p>
           </article>
           <article class="role-card">
             <span class="role-badge role-badge--gray">Gość</span>
-            <p>Rola startowa dla nowych lub mniej aktywnych osób, dająca ograniczony dostęp do najważniejszych sekcji serwera.</p>
+            <p>Rola startowa dla nowych osób, z dostępem do podstawowych sekcji serwera przed pełnym wdrożeniem do społeczności.</p>
           </article>
           <article class="role-card">
             <span class="role-badge role-badge--gold">Bogowie serwera</span>
-            <p>Rola wyjątkowa i symboliczna. Jest traktowana jako wyróżnienie dla osób szczególnie ważnych dla historii lub tożsamości serwera.</p>
+            <p>Rola wyróżniająca, przyznawana osobom szczególnie ważnym dla historii serwera albo mocno zapisanym w jego klimacie.</p>
           </article>
         </div>
       </section>
-    </div>
-  </main>
+    </main>
+  </div>
+
+  <script src="../js/main.js"></script>
 </body>
 </html>
