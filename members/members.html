@@ -3,33 +3,126 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Members</title>
+  <meta
+    name="description"
+    content="Członkowie społeczności serwera Discord."
+  >
+  <title>Członkowie Serwera</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <main class="main-panel">
-    <section class="panel-card panel-card--active">
-      <div class="panel-card__header">
+  <div class="app-shell">
+    <aside class="channel-sidebar" id="channelSidebar">
+      <header class="channel-sidebar__header">
         <div>
-          <p class="panel-card__eyebrow">Standalone page</p>
-          <h3>Members</h3>
+          <p class="channel-sidebar__eyebrow">Discord Server</p>
+          <h1>Członkowie</h1>
         </div>
-        <div class="panel-card__actions">
-          <span class="status-pill">27 online</span>
-          <a class="panel-link" href="../index.html">Powrót do panelu</a>
+        <p class="channel-sidebar__meta">Nawigacja po sekcjach</p>
+        <div class="sidebar-shortcuts">
+          <a class="sidebar-shortcut" href="../index.html">Strona główna</a>
+          <a class="sidebar-shortcut" href="../channels/channels.html">Kanały</a>
         </div>
+      </header>
+
+      <div class="channel-sidebar__scroll" aria-label="Sekcje panelu">
+        <section class="channel-group">
+          <h2 class="channel-group__title">Panel</h2>
+          <a class="sidebar-nav__link" href="../index.html">🏠 Strona główna</a>
+          <a class="sidebar-nav__link" href="../channels/channels.html"># Kanały</a>
+          <a class="sidebar-nav__link" href="../info/info.html">ℹ️ Informacje</a>
+          <a class="sidebar-nav__link" href="../roles/roles.html">🛡 Role i uprawnienia</a>
+        </section>
+
+        <section class="channel-group">
+          <h2 class="channel-group__title">Społeczność</h2>
+          <a class="sidebar-nav__link is-active" href="./members.html">👥 Członkowie</a>
+          <a class="sidebar-nav__link" href="../moderation/moderation.html">🧰 Moderacja</a>
+          <a class="sidebar-nav__link" href="../events/events.html">🎯 Eventy</a>
+        </section>
       </div>
-      <div class="staff-grid">
-        <article class="member-row"><strong>Astra</strong><span class="tag tag--green">Członek</span></article>
-        <article class="member-row"><strong>Volt</strong><span class="tag tag--gold">Bogowie serwera</span></article>
-        <article class="member-row"><strong>Nero</strong><span class="tag tag--gray">Gość</span></article>
-        <article class="member-row"><strong>Selene</strong><span class="tag tag--orange">Pomocnik moderacji</span></article>
-        <article class="member-row"><strong>Orbit</strong><span class="tag tag--violet">Administracja</span></article>
-        <article class="member-row"><strong>Nova</strong><span class="tag tag--green">Członek</span></article>
-        <article class="member-row"><strong>Zenith</strong><span class="tag tag--green">Członek</span></article>
-        <article class="member-row"><strong>Luma</strong><span class="tag tag--gray">Gość</span></article>
-      </div>
-    </section>
-  </main>
+    </aside>
+
+    <main class="content-panel">
+      <header class="content-topbar">
+        <button
+          class="hamburger"
+          id="sidebarToggle"
+          type="button"
+          aria-controls="channelSidebar"
+          aria-expanded="false"
+          aria-label="Otwórz sekcje"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div>
+          <p class="content-topbar__eyebrow">Społeczność</p>
+          <h2>Członkowie serwera</h2>
+        </div>
+        <div class="topbar-links">
+          <a class="topbar-link" href="../index.html">Powrót na główną</a>
+          <a
+            class="join-btn"
+            href="https://discord.gg/8MzyPqCg6n"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Dołącz do Discorda
+          </a>
+        </div>
+      </header>
+
+      <section class="content-card">
+        <div class="content-card__meta">
+          <span class="content-pill">Społeczność</span>
+          <span class="content-pill content-pill--soft">Członkowie</span>
+        </div>
+
+        <h3 class="content-card__heading">Aktywne osoby na serwerze</h3>
+        <p class="content-card__description">
+          Ten widok pokazuje przykładowy skład społeczności. Tu środek ma sens,
+          bo lista jest krótka i nie trzeba przenosić jej do dużego panelu po lewej.
+        </p>
+
+        <div class="roles-grid">
+          <article class="role-card">
+            <span class="role-badge role-badge--green">Członek</span>
+            <p><strong>Astra</strong> bierze udział w rozmowach i regularnie pojawia się na kanałach tekstowych.</p>
+          </article>
+          <article class="role-card">
+            <span class="role-badge role-badge--gold">Bogowie serwera</span>
+            <p><strong>Volt</strong> jest wyróżnioną osobą o dużym znaczeniu dla historii serwera.</p>
+          </article>
+          <article class="role-card">
+            <span class="role-badge role-badge--gray">Gość</span>
+            <p><strong>Nero</strong> ma dostęp do podstawowych sekcji i dopiero poznaje układ serwera.</p>
+          </article>
+          <article class="role-card">
+            <span class="role-badge role-badge--orange">Pomocnik moderacji</span>
+            <p><strong>Selene</strong> wspiera porządek i pomaga użytkownikom w codziennych sprawach.</p>
+          </article>
+          <article class="role-card">
+            <span class="role-badge role-badge--violet">Administracja</span>
+            <p><strong>Orbit</strong> pilnuje struktury kanałów, zasad i organizacji społeczności.</p>
+          </article>
+          <article class="role-card">
+            <span class="role-badge role-badge--green">Członek</span>
+            <p><strong>Nova</strong>, <strong>Zenith</strong> i <strong>Luma</strong> uzupełniają aktywną społeczność w różnych sekcjach serwera.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="../js/main.js"></script>
 </body>
 </html>

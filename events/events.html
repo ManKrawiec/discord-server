@@ -3,53 +3,118 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Events</title>
+  <meta
+    name="description"
+    content="Eventy i aktywności społeczności serwera Discord."
+  >
+  <title>Eventy Serwera</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <main class="main-panel">
-    <section class="panel-card panel-card--active">
-      <div class="panel-card__header">
+  <div class="app-shell">
+    <aside class="channel-sidebar" id="channelSidebar">
+      <header class="channel-sidebar__header">
         <div>
-          <p class="panel-card__eyebrow">Standalone page</p>
-          <h3>Events</h3>
+          <p class="channel-sidebar__eyebrow">Discord Server</p>
+          <h1>Eventy</h1>
         </div>
-        <div class="panel-card__actions">
-          <span class="status-pill">3 w tym tygodniu</span>
-          <a class="panel-link" href="../index.html">Powrót do panelu</a>
+        <p class="channel-sidebar__meta">Nawigacja po sekcjach</p>
+        <div class="sidebar-shortcuts">
+          <a class="sidebar-shortcut" href="../index.html">Strona główna</a>
+          <a class="sidebar-shortcut" href="../channels/channels.html">Kanały</a>
         </div>
+      </header>
+
+      <div class="channel-sidebar__scroll" aria-label="Sekcje panelu">
+        <section class="channel-group">
+          <h2 class="channel-group__title">Panel</h2>
+          <a class="sidebar-nav__link" href="../index.html">🏠 Strona główna</a>
+          <a class="sidebar-nav__link" href="../channels/channels.html"># Kanały</a>
+          <a class="sidebar-nav__link" href="../info/info.html">ℹ️ Informacje</a>
+          <a class="sidebar-nav__link" href="../roles/roles.html">🛡 Role i uprawnienia</a>
+        </section>
+
+        <section class="channel-group">
+          <h2 class="channel-group__title">Społeczność</h2>
+          <a class="sidebar-nav__link" href="../members/members.html">👥 Członkowie</a>
+          <a class="sidebar-nav__link" href="../moderation/moderation.html">🧰 Moderacja</a>
+          <a class="sidebar-nav__link is-active" href="./events.html">🎯 Eventy</a>
+        </section>
       </div>
-      <div class="events-list">
-        <article class="event-item">
-          <span class="event-item__date">09 Apr</span>
-          <div>
-            <h4>Wieczór integracyjny</h4>
-            <p>Luźny voice chat, onboarding nowych osób i prezentacja kanałów.</p>
-          </div>
-        </article>
-        <article class="event-item">
-          <span class="event-item__date">11 Apr</span>
-          <div>
-            <h4>Turniej społeczności</h4>
-            <p>Rywalizacja drużynowa z podsumowaniem wyników na kanale ogłoszeń.</p>
-          </div>
-        </article>
-        <article class="event-item">
-          <span class="event-item__date">14 Apr</span>
-          <div>
-            <h4>Q&amp;A administracji</h4>
-            <p>Sesja pytań o plany rozwoju, role i propozycje zmian na serwerze.</p>
-          </div>
-        </article>
-        <article class="event-item">
-          <span class="event-item__date">18 Apr</span>
-          <div>
-            <h4>Community Night</h4>
-            <p>Wspólne granie i networking na kanałach głosowych.</p>
-          </div>
-        </article>
-      </div>
-    </section>
-  </main>
+    </aside>
+
+    <main class="content-panel">
+      <header class="content-topbar">
+        <button
+          class="hamburger"
+          id="sidebarToggle"
+          type="button"
+          aria-controls="channelSidebar"
+          aria-expanded="false"
+          aria-label="Otwórz sekcje"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div>
+          <p class="content-topbar__eyebrow">Aktywności</p>
+          <h2>Eventy społeczności</h2>
+        </div>
+        <div class="topbar-links">
+          <a class="topbar-link" href="../index.html">Powrót na główną</a>
+          <a
+            class="join-btn"
+            href="https://discord.gg/8MzyPqCg6n"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Dołącz do Discorda
+          </a>
+        </div>
+      </header>
+
+      <section class="content-card">
+        <div class="content-card__meta">
+          <span class="content-pill">Eventy</span>
+          <span class="content-pill content-pill--soft">Plan aktywności</span>
+        </div>
+
+        <h3 class="content-card__heading">Nadchodzące wydarzenia</h3>
+        <p class="content-card__description">
+          To osobna sekcja na eventy i większe aktywności społeczności.
+          Dzięki temu harmonogram nie miesza się z listą kanałów ani treścią głównej strony.
+        </p>
+
+        <div class="page-grid">
+          <article class="server-info-card">
+            <h3>09 Apr</h3>
+            <p>Wieczór integracyjny, onboarding nowych osób i krótki przegląd najważniejszych sekcji serwera.</p>
+          </article>
+          <article class="server-info-card">
+            <h3>11 Apr</h3>
+            <p>Turniej społeczności z podsumowaniem wyników i publikacją ustaleń na kanałach organizacyjnych.</p>
+          </article>
+          <article class="server-info-card">
+            <h3>14 Apr</h3>
+            <p>Q&amp;A administracji o planach rozwoju, nowych rolach i potencjalnych zmianach w układzie serwera.</p>
+          </article>
+          <article class="server-info-card">
+            <h3>18 Apr</h3>
+            <p>Community Night z luźnym siedzeniem na voice, graniem i integracją członków społeczności.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="../js/main.js"></script>
 </body>
 </html>

@@ -17,22 +17,81 @@
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-  <main class="page-shell">
-    <div class="page-wrapper">
-      <header class="page-topbar">
+  <div class="app-shell">
+    <aside class="channel-sidebar" id="channelSidebar">
+      <header class="channel-sidebar__header">
         <div>
-          <p class="page-eyebrow">Discord Server</p>
-          <h1>Informacje serwera</h1>
+          <p class="channel-sidebar__eyebrow">Discord Server</p>
+          <h1>Informacje Serwera</h1>
         </div>
-        <a class="page-back" href="../index.html">Powrót do panelu</a>
+        <p class="channel-sidebar__meta">Nawigacja po sekcjach</p>
+        <div class="sidebar-shortcuts">
+          <a class="sidebar-shortcut" href="../index.html">Strona główna</a>
+          <a class="sidebar-shortcut" href="../channels/channels.html">Kanały</a>
+        </div>
       </header>
 
-      <section class="page-card">
-        <h2>Opis serwera</h2>
-        <p class="page-intro">
+      <div class="channel-sidebar__scroll" aria-label="Sekcje panelu">
+        <section class="channel-group">
+          <h2 class="channel-group__title">Panel</h2>
+          <a class="sidebar-nav__link" href="../index.html">🏠 Strona główna</a>
+          <a class="sidebar-nav__link" href="../channels/channels.html"># Kanały</a>
+          <a class="sidebar-nav__link is-active" href="./info.html">ℹ️ Informacje</a>
+          <a class="sidebar-nav__link" href="../roles/roles.html">🛡 Role i uprawnienia</a>
+        </section>
+
+        <section class="channel-group">
+          <h2 class="channel-group__title">Społeczność</h2>
+          <a class="sidebar-nav__link" href="../members/members.html">👥 Członkowie</a>
+          <a class="sidebar-nav__link" href="../moderation/moderation.html">🧰 Moderacja</a>
+          <a class="sidebar-nav__link" href="../events/events.html">🎯 Eventy</a>
+        </section>
+      </div>
+    </aside>
+
+    <main class="content-panel">
+      <header class="content-topbar">
+        <button
+          class="hamburger"
+          id="sidebarToggle"
+          type="button"
+          aria-controls="channelSidebar"
+          aria-expanded="false"
+          aria-label="Otwórz sekcje"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <div>
+          <p class="content-topbar__eyebrow">Sekcja informacyjna</p>
+          <h2>Informacje serwera</h2>
+        </div>
+        <div class="topbar-links">
+          <a class="topbar-link" href="../index.html">Powrót na główną</a>
+          <a
+            class="join-btn"
+            href="https://discord.gg/8MzyPqCg6n"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Dołącz do Discorda
+          </a>
+        </div>
+      </header>
+
+      <section class="content-card">
+        <div class="content-card__meta">
+          <span class="content-pill">Informacje</span>
+          <span class="content-pill content-pill--soft">Osobna zakładka</span>
+        </div>
+
+        <h3 class="content-card__heading">Opis serwera</h3>
+        <p class="content-card__description">
           To jest osobna strona z informacjami o serwerze. Z panelu głównego można
-          tu wejść bez zastępowania treści kanałów, więc układ indeksu zostaje taki
-          jak teraz, a ważne informacje mają własne miejsce.
+          tu wejść bez zastępowania treści kanałów, więc układ jest czytelniejszy
+          i każda większa sekcja ma własne miejsce.
         </p>
 
         <div class="page-grid">
@@ -62,7 +121,9 @@
           </article>
         </div>
       </section>
-    </div>
-  </main>
+    </main>
+  </div>
+
+  <script src="../js/main.js"></script>
 </body>
 </html>
