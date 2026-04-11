@@ -85,9 +85,21 @@
             <p class="discord-widget__copy">
               Sprawdź, ile osób jest teraz online i dołącz do aktywnej społeczności.
             </p>
-            <div class="discord-widget__status" data-discord-widget>
-              <span class="discord-widget__presence" aria-hidden="true">🟢</span>
-              <strong class="discord-widget__count" data-discord-count>Ładowanie...</strong>
+            <div class="discord-widget__stats" data-discord-widget>
+              <div class="discord-widget__status">
+                <span class="discord-widget__presence" aria-hidden="true">🟢</span>
+                <div class="discord-widget__value-group">
+                  <strong class="discord-widget__count" data-discord-count>Ładowanie...</strong>
+                  <span class="discord-widget__label">Online teraz</span>
+                </div>
+              </div>
+              <div class="discord-widget__status">
+                <span class="discord-widget__presence discord-widget__presence--members" aria-hidden="true">👥</span>
+                <div class="discord-widget__value-group">
+                  <strong class="discord-widget__count" data-discord-members>Ładowanie...</strong>
+                  <span class="discord-widget__label">Na serwerze</span>
+                </div>
+              </div>
             </div>
             <p class="discord-widget__meta" data-discord-meta>Odświeżanie danych...</p>
           </section>

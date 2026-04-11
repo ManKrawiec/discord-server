@@ -1,9 +1,11 @@
 const navToggle = document.querySelector(".nav-toggle");
 const siteNav = document.querySelector(".site-nav");
 const discordWidget = document.querySelector("[data-discord-widget]")?.closest(".discord-widget");
-const discordCount = document.querySelector("[data-discord-count]");
+const discordOnlineCount = document.querySelector("[data-discord-count]");
+const discordMemberCount = document.querySelector("[data-discord-members]");
 const discordMeta = document.querySelector("[data-discord-meta]");
 const discordWidgetUrl = "https://discordapp.com/api/guilds/1330499227406565471/widget.json";
+const discordInviteUrl = "https://discord.com/api/v9/invites/8MzyPqCg6n?with_counts=true";
 const discordRefreshIntervalMs = 60_000;
 
 if (navToggle && siteNav) {
@@ -55,44 +57,63 @@ function formatUpdatedTime() {
 }
 
 async function updateDiscordPresence() {
-  if (!discordCount || !discordMeta) {
+  if (!discordOnlineCount || !discordMemberCount || !discordMeta) {
     return;
   }
 
   setDiscordWidgetState("loading");
-  discordMeta.textContent = "Pobieranie aktualnej liczby osób online...";
+  discordMeta.textContent = "Pobieranie aktualnej liczby osób online i wszystkich członków...";
 
   try {
-    // Pobiera publiczne dane widgetu serwera Discord.
-    const response = await fetch(discordWidgetUrl, {
-      cache: "no-store"
-    });
+    // Pobiera publiczne dane widgetu i publiczne statystyki zaproszenia Discord.
+    const [widgetResponse, inviteResponse] = await Promise.all([
+      fetch(discordWidgetUrl, {
+        cache: "no-store"
+      }),
+      fetch(discordInviteUrl, {
+        cache: "no-store"
+      })
+    ]);
 
-    if (!response.ok) {
-      throw new Error(`HTTP ${response.status}`);
+    if (!widgetResponse.ok) {
+      throw new Error(`Widget HTTP ${widgetResponse.status}`);
     }
 
-    // Odczytuje liczbę użytkowników online z pola presence_count.
-    const data = await response.json();
-    const onlineCount = data?.presence_count;
+    if (!inviteResponse.ok) {
+      throw new Error(`Invite HTTP ${inviteResponse.status}`);
+    }
+
+    // Odczytuje liczbę użytkowników online z widgetu i wszystkich członków z endpointu invite.
+    const [widgetData, inviteData] = await Promise.all([
+      widgetResponse.json(),
+      inviteResponse.json()
+    ]);
+    const onlineCount = widgetData?.presence_count;
+    const memberCount = inviteData?.approximate_member_count;
 
     if (typeof onlineCount !== "number") {
       throw new Error("Brak pola presence_count w odpowiedzi API.");
     }
 
-    discordCount.textContent = `${onlineCount} osób online`;
+    if (typeof memberCount !== "number") {
+      throw new Error("Brak pola approximate_member_count w odpowiedzi API.");
+    }
+
+    discordOnlineCount.textContent = `${onlineCount}`;
+    discordMemberCount.textContent = `${memberCount}`;
     discordMeta.textContent = `Ostatnia aktualizacja: ${formatUpdatedTime()}`;
     setDiscordWidgetState("ready");
   } catch (error) {
     // Pokazuje czytelny komunikat, jeśli API lub połączenie zawiedzie.
-    discordCount.textContent = "Nie udało się pobrać danych";
+    discordOnlineCount.textContent = "Błąd";
+    discordMemberCount.textContent = "Błąd";
     discordMeta.textContent = "Sprawdź połączenie lub spróbuj ponownie za chwilę.";
     setDiscordWidgetState("error");
     console.error("Discord widget error:", error);
   }
 }
 
-if (discordWidget && discordCount && discordMeta) {
+if (discordWidget && discordOnlineCount && discordMemberCount && discordMeta) {
   updateDiscordPresence();
   // Automatycznie odświeża licznik co 60 sekund.
   window.setInterval(updateDiscordPresence, discordRefreshIntervalMs);

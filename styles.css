@@ -409,13 +409,18 @@ img {
   color: #c6cad2;
 }
 
+.discord-widget__stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 20px;
+}
+
 .discord-widget__status {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
-  min-width: 240px;
-  margin-top: 20px;
   padding: 18px 20px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 18px;
@@ -435,9 +440,26 @@ img {
   filter: drop-shadow(0 0 10px rgba(87, 242, 135, 0.45));
 }
 
+.discord-widget__presence--members {
+  filter: drop-shadow(0 0 10px rgba(88, 199, 243, 0.3));
+}
+
+.discord-widget__value-group {
+  display: grid;
+  gap: 2px;
+  text-align: left;
+}
+
 .discord-widget__count {
   font-size: clamp(1.2rem, 2vw, 1.5rem);
   letter-spacing: -0.03em;
+}
+
+.discord-widget__label {
+  color: #9ea5b1;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 .discord-widget__meta {
@@ -881,9 +903,8 @@ img {
     grid-template-columns: 1fr;
   }
 
-  .discord-widget__status {
-    width: 100%;
-    min-width: 0;
+  .discord-widget__stats {
+    grid-template-columns: 1fr;
   }
 
   .hero-panel__sidebar {
