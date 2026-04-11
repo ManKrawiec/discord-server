@@ -5,141 +5,268 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta
     name="description"
-    content="Statyczny panel serwera Discord z kanałami, kategoriami i opisami w stylu Discord."
+    content="Nowoczesny landing page serwera Discord z najważniejszymi informacjami, rolami i zachętą do dołączenia."
   >
-  <title>Discord Server Panel</title>
+  <title>Discord Server Panel | Dołącz do społeczności</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
     rel="stylesheet"
   >
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-  <div class="app-shell">
-    <aside class="channel-sidebar" id="channelSidebar">
-      <header class="channel-sidebar__header">
-        <div>
-          <p class="channel-sidebar__eyebrow">Discord Server</p>
-          <h1>Panel Serwera</h1>
-        </div>
-        <p class="channel-sidebar__meta">Szybkie przejścia po sekcjach</p>
-        <div class="sidebar-shortcuts">
-          <a class="sidebar-shortcut" href="./channels/channels.html">Przejdź do kanałów</a>
-          <a class="sidebar-shortcut" href="./events/events.html">Zobacz eventy</a>
-        </div>
-      </header>
-
-      <div class="channel-sidebar__scroll" aria-label="Sekcje panelu">
-        <section class="channel-group">
-          <h2 class="channel-group__title">Panel</h2>
-          <a class="sidebar-nav__link is-active" href="./index.html">🏠 Strona główna</a>
-          <a class="sidebar-nav__link" href="./channels/channels.html"># Kanały</a>
-          <a class="sidebar-nav__link" href="./info/info.html">ℹ️ Informacje</a>
-        </section>
-
-        <section class="channel-group">
-          <h2 class="channel-group__title">Społeczność</h2>
-          <a class="sidebar-nav__link" href="./members/members.html">👥 Członkowie</a>
-          <a class="sidebar-nav__link" href="./roles/roles.html">🛡 Role serwera</a>
-          <a class="sidebar-nav__link" href="./events/events.html">🎯 Eventy</a>
-        </section>
-      </div>
-    </aside>
-
-    <main class="content-panel">
-      <header class="content-topbar">
-        <button
-          class="hamburger"
-          id="sidebarToggle"
-          type="button"
-          aria-controls="channelSidebar"
-          aria-expanded="false"
-          aria-label="Otwórz kanały"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-
-        <div>
-          <p class="content-topbar__eyebrow">Strona główna</p>
-          <h2>Przegląd serwera</h2>
-        </div>
-        <div class="topbar-links">
-          <a
-            class="join-btn"
-            href="https://discord.gg/8MzyPqCg6n"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Dołącz do Discorda
-          </a>
-          <a class="topbar-link" href="./channels/channels.html">Kanały</a>
-          <a class="topbar-link" href="./info/info.html">Informacje</a>
-        </div>
-      </header>
-
-      <section class="content-card">
-        <div class="content-card__meta">
-          <span class="content-pill">Panel startowy</span>
-          <span class="content-pill content-pill--soft">Uporządkowany układ</span>
-        </div>
-
-        <h3 class="content-card__heading">Najważniejsze rzeczy są teraz rozdzielone na osobne zakładki</h3>
-        <p class="content-card__description">
-          Strona główna pokazuje tylko skróty do sekcji, a pełna lista kanałów została
-          przeniesiona do osobnego widoku. Dzięki temu środek jest czystszy, a długie
-          listy siedzą tam, gdzie mają sens, czyli po lewej stronie w zakładce kanałów.
-        </p>
-
-        <div class="content-card__grid">
-          <article class="info-tile">
-            <p class="info-tile__label">Kanały</p>
-            <strong>Osobny widok z listą po lewej</strong>
-          </article>
-          <article class="info-tile">
-            <p class="info-tile__label">Informacje</p>
-            <strong>Środkowa kolumna dla krótszych treści</strong>
-          </article>
-          <article class="info-tile">
-            <p class="info-tile__label">Status</p>
-            <strong>Lepszy porządek nawigacji</strong>
-          </article>
-        </div>
-
-        <div class="section-grid">
-          <a class="section-card-link" href="./channels/channels.html">
-            <p class="section-card-link__eyebrow">Kanały</p>
-            <h4>Wejdź do pełnej listy kanałów</h4>
-            <p>Tutaj kanały są rozwinięte po lewej stronie i można przełączać ich opisy bez zaśmiecania strony głównej.</p>
-          </a>
-          <a class="section-card-link" href="./info/info.html">
-            <p class="section-card-link__eyebrow">Informacje</p>
-            <h4>Przeczytaj opis serwera</h4>
-            <p>Oddzielna podstrona na opis serwera, zasady organizacji i ogólny kontekst dla nowych osób.</p>
-          </a>
-          <a class="section-card-link" href="./roles/roles.html">
-            <p class="section-card-link__eyebrow">Role</p>
-            <h4>Zobacz role serwera</h4>
-            <p>Spójna rozpiska najważniejszych ról, poziomów dostępu i tego, kto za co odpowiada na serwerze.</p>
-          </a>
-          <a class="section-card-link" href="./events/events.html">
-            <p class="section-card-link__eyebrow">Społeczność</p>
-            <h4>Przegląd członków i eventów</h4>
-            <p>Osobne miejsca na członków, role serwera i eventy, bez wrzucania wszystkiego do jednego centralnego widoku.</p>
-          </a>
-        </div>
-
-        <div class="content-card__actions">
-          <a class="topbar-link" href="./channels/channels.html">Otwórz zakładkę kanałów</a>
-          <a class="topbar-link" href="./roles/roles.html">Zobacz role serwera</a>
-        </div>
-      </section>
-    </main>
+  <div class="page-bg" aria-hidden="true">
+    <div class="page-bg__orb page-bg__orb--one"></div>
+    <div class="page-bg__orb page-bg__orb--two"></div>
+    <div class="page-bg__grid"></div>
   </div>
 
-  <script src="./js/main.js"></script>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="#hero" data-scroll>
+        <span class="brand__mark">DS</span>
+        <span class="brand__text">
+          <strong>Discord Server Panel</strong>
+          <small>Społeczność, kanały i eventy</small>
+        </span>
+      </a>
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="siteNav"
+        aria-label="Otwórz nawigację"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" id="siteNav" aria-label="Główna nawigacja">
+        <a href="#about" data-scroll>O serwerze</a>
+        <a href="#features" data-scroll>Funkcje</a>
+        <a href="#roles" data-scroll>Role</a>
+        <a href="./channels/channels.html">Kanały</a>
+        <a class="btn btn-primary btn-primary--nav" href="https://discord.gg/8MzyPqCg6n" target="_blank" rel="noopener noreferrer">Dołącz</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section" id="hero">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <p class="eyebrow">Aktywna społeczność Discord</p>
+          <h1>Wejdź na serwer, gdzie rozmowy, eventy i porządek naprawdę działają.</h1>
+          <p class="hero__lead">
+            Miejsce dla osób, które chcą szybko odnaleźć się na serwerze, pogadać na tematycznych kanałach
+            i wskoczyć do społeczności bez chaosu od pierwszej minuty.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn btn-primary" href="https://discord.gg/8MzyPqCg6n" target="_blank" rel="noopener noreferrer">
+              Dołącz do Discorda
+            </a>
+            <a class="btn btn-secondary" href="#features" data-scroll>
+              Zobacz kanały
+            </a>
+          </div>
+
+          <ul class="hero__stats" aria-label="Najważniejsze atuty serwera">
+            <li>
+              <strong>Tematyczne kanały</strong>
+              <span>Krótka droga do właściwej rozmowy</span>
+            </li>
+            <li>
+              <strong>Jasne role</strong>
+              <span>Wiadomo, kto za co odpowiada</span>
+            </li>
+            <li>
+              <strong>Eventy społeczności</strong>
+              <span>Aktywności, które nie giną w tle</span>
+            </li>
+          </ul>
+        </div>
+
+        <aside class="hero-panel card">
+          <div class="hero-panel__badge">Live Preview</div>
+          <div class="hero-panel__window">
+            <div class="hero-panel__top">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="hero-panel__body">
+              <div class="hero-panel__sidebar">
+                <p>Informacje</p>
+                <p>Ogólny</p>
+                <p>Eventy</p>
+                <p>Role</p>
+              </div>
+              <div class="hero-panel__content">
+                <div class="hero-panel__card">
+                  <strong>Start bez chaosu</strong>
+                  <span>Nowe osoby od razu widzą zasady, kanały i najważniejsze sekcje.</span>
+                </div>
+                <div class="hero-panel__card hero-panel__card--accent">
+                  <strong>Dołącz jednym kliknięciem</strong>
+                  <span>Landing prowadzi prosto do zaproszenia i pokazuje, czego się spodziewać.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">O serwerze</p>
+          <h2 class="section-title">Społeczność dla osób, które lubią konkretną strukturę i aktywny kontakt.</h2>
+          <p class="section-copy">
+            Serwer łączy rozmowy codzienne, kanały tematyczne i sekcje organizacyjne w jednym miejscu.
+            Nowi użytkownicy szybko łapią układ, a stali członkowie mają przestrzeń do rozmów, pomysłów i wspólnych wydarzeń.
+          </p>
+        </div>
+
+        <div class="benefits-grid">
+          <article class="card benefit-card">
+            <span class="benefit-card__icon">🤝</span>
+            <h3>Aktywna społeczność</h3>
+            <p>Nie trafiasz na pusty serwer. Są rozmowy, luźne kanały i miejsce na szybkie wejście do ekipy.</p>
+          </article>
+          <article class="card benefit-card">
+            <span class="benefit-card__icon">🧭</span>
+            <h3>Czytelny układ</h3>
+            <p>Podział na informacje, role, eventy i kanały ułatwia start i ogranicza bałagan.</p>
+          </article>
+          <article class="card benefit-card">
+            <span class="benefit-card__icon">🎯</span>
+            <h3>Więcej niż chat</h3>
+            <p>Serwer żyje nie tylko tekstem. Są eventy, sekcje społecznościowe i konkretne narzędzia organizacyjne.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft" id="features">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Funkcje i kanały</p>
+          <h2 class="section-title">Najważniejsze sekcje, które budują rytm serwera.</h2>
+          <p class="section-copy">
+            Zamiast wrzucać wszystko do jednego widoku, serwer jest podzielony na konkretne obszary:
+            informacje, kanały rozmów, eventy i narzędzia wspierające codzienną aktywność.
+          </p>
+        </div>
+
+        <div class="cards-grid">
+          <article class="card feature-card">
+            <span class="feature-card__icon">#</span>
+            <h3>Kanały tematyczne</h3>
+            <p>Osobne miejsca na codzienne rozmowy, memy, muzykę, clipy i bardziej konkretne tematy.</p>
+          </article>
+          <article class="card feature-card">
+            <span class="feature-card__icon">📢</span>
+            <h3>Sekcje informacyjne</h3>
+            <p>Zasady, ogłoszenia i onboarding są pod ręką, więc łatwo ogarnąć serwer od wejścia.</p>
+          </article>
+          <article class="card feature-card">
+            <span class="feature-card__icon">🤖</span>
+            <h3>Boty i komendy</h3>
+            <p>Narzędziowe kanały odciążają główne rozmowy i dają miejsce na komendy bez spamu.</p>
+          </article>
+          <article class="card feature-card">
+            <span class="feature-card__icon">🎮</span>
+            <h3>Eventy społeczności</h3>
+            <p>Wspólne aktywności i wydarzenia mają własną przestrzeń, więc łatwiej zebrać ludzi i utrzymać klimat.</p>
+          </article>
+          <article class="card feature-card">
+            <span class="feature-card__icon">💡</span>
+            <h3>Pomysły i feedback</h3>
+            <p>Są kanały na sugestie i poprawki, dzięki czemu społeczność realnie wpływa na rozwój serwera.</p>
+          </article>
+          <article class="card feature-card">
+            <span class="feature-card__icon">🔊</span>
+            <h3>Kanały głosowe</h3>
+            <p>Szybkie wejście na rozmowę, granie lub organizację eventu bez przeklikiwania się przez chaos.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="roles">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Role na serwerze</p>
+          <h2 class="section-title">Jasny podział odpowiedzialności zamiast przypadkowej hierarchii.</h2>
+          <p class="section-copy">
+            Role są opisane prosto i konkretnie, dzięki czemu od razu wiadomo, kto pilnuje porządku,
+            kto prowadzi serwer i jaki poziom dostępu ma nowa osoba.
+          </p>
+        </div>
+
+        <div class="cards-grid cards-grid--roles">
+          <article class="card role-card">
+            <span class="role-card__tag role-card__tag--owner">Admin</span>
+            <h3>Administracja</h3>
+            <p>Ustawia kierunek rozwoju serwera, zarządza układem sekcji i podejmuje kluczowe decyzje.</p>
+          </article>
+          <article class="card role-card">
+            <span class="role-card__tag role-card__tag--mod">Moderator</span>
+            <h3>Moderacja</h3>
+            <p>Dba o porządek w rozmowach, reaguje na zgłoszenia i pomaga utrzymać dobrą atmosferę.</p>
+          </article>
+          <article class="card role-card">
+            <span class="role-card__tag role-card__tag--member">Member</span>
+            <h3>Członek</h3>
+            <p>Podstawowa aktywna rola dająca pełny udział w rozmowach, kanałach i wydarzeniach społeczności.</p>
+          </article>
+          <article class="card role-card">
+            <span class="role-card__tag role-card__tag--guest">Gość</span>
+            <h3>Nowa osoba</h3>
+            <p>Startowy poziom dostępu dla nowych użytkowników, zanim wejdą pełniej w życie serwera.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--cta" id="cta">
+      <div class="container">
+        <div class="cta card">
+          <p class="eyebrow">Dołącz do serwera</p>
+          <h2 class="section-title">Wskocz na serwer i zobacz, co dzieje się na żywo.</h2>
+          <p class="section-copy">
+            Jeśli szukasz uporządkowanej społeczności z kanałami, rolami i miejscem na eventy,
+            wejdziesz tu bez zgadywania, gdzie zacząć.
+          </p>
+          <div class="cta__actions">
+            <a class="btn btn-primary" href="https://discord.gg/8MzyPqCg6n" target="_blank" rel="noopener noreferrer">
+              Dołącz do Discorda
+            </a>
+            <a class="btn btn-secondary" href="./info/info.html">Więcej informacji</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>Niezależny panel informacyjny serwera Discord.</p>
+      <nav class="site-footer__nav" aria-label="Linki do podstron">
+        <a href="./channels/channels.html">Kanały</a>
+        <a href="./info/info.html">Informacje</a>
+        <a href="./roles/roles.html">Role</a>
+        <a href="./events/events.html">Eventy</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
 </body>
 </html>
